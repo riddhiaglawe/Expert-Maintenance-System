@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sensor Simulation</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h2 style="text-align:center;">Simulated Motor Sensor Data</h2>
+
+<div style="width:420px; margin:auto; border:1px solid #ccc; padding:20px; border-radius:10px; background:white; box-shadow:0px 0px 8px #ccc;">
+
+<p><b>Temperature:</b> {{data.temperature}} °C</p>
+<p><b>Vibration:</b> {{data.vibration}}</p>
+<p><b>Oil Level:</b> {{data.oil}}</p>
+<p><b>Battery Status:</b> {{data.battery}}</p>
+<p><b>Noise Level:</b> {{data.noise}}</p>
+
+</div>
+
+<br>
+
+<div style="text-align:center;">
+
+<!-- FORM THAT SENDS DATA TO CHECK MOTOR PAGE -->
+
+<form action="/check" method="POST">
+
+<input type="hidden" name="temperature" value="{{data.temperature}}">
+<input type="hidden" name="vibration" value="{{data.vibration}}">
+<input type="hidden" name="oil" value="{{data.oil}}">
+<input type="hidden" name="battery" value="{{data.battery}}">
+<input type="hidden" name="noise" value="{{data.noise}}">
+
+<button type="submit" style="padding:10px 20px;">
+Analyze These Values
+</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">
+<button style="padding:8px 16px;">
+⬅ Back to Dashboard
+</button>
+</a>
+
+</div>
+
+</body>
+</html>

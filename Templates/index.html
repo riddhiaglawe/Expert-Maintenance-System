@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Motor Condition Analysis</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h2 style="text-align:center;">AI-Based Industrial Motor Maintenance System</h2>
+
+<div style="display:flex; justify-content:center; gap:30px; margin-top:30px;">
+
+<!-- INPUT CARD -->
+
+<div style="width:380px; border:1px solid #ccc; padding:20px; border-radius:10px; background:white; box-shadow:0px 0px 8px #ccc;">
+
+<h3>Motor Input Parameters</h3>
+
+<form method="POST">
+
+<label>Temperature (°C)</label>
+<input type="number" name="temperature" value="{{ formdata.get('temperature','') }}" required>
+
+<label>Vibration Level</label>
+<select name="vibration">
+<option value="Low" {% if formdata.get('vibration') == 'Low' %}selected{% endif %}>Low</option>
+<option value="Medium" {% if formdata.get('vibration') == 'Medium' %}selected{% endif %}>Medium</option>
+<option value="High" {% if formdata.get('vibration') == 'High' %}selected{% endif %}>High</option>
+</select>
+
+<label>Oil Level</label>
+<select name="oil">
+<option value="Normal" {% if formdata.get('oil') == 'Normal' %}selected{% endif %}>Normal</option>
+<option value="Low" {% if formdata.get('oil') == 'Low' %}selected{% endif %}>Low</option>
+</select>
+
+<label>Battery Status</label>
+<select name="battery">
+<option value="Normal" {% if formdata.get('battery') == 'Normal' %}selected{% endif %}>Normal</option>
+<option value="Low" {% if formdata.get('battery') == 'Low' %}selected{% endif %}>Low</option>
+</select>
+
+<label>Noise Level</label>
+<select name="noise">
+<option value="Low" {% if formdata.get('noise') == 'Low' %}selected{% endif %}>Low</option>
+<option value="High" {% if formdata.get('noise') == 'High' %}selected{% endif %}>High</option>
+</select>
+
+<br><br>
+
+<button type="submit">Analyze Motor</button>
+
+</form>
+
+<br>
+
+<a href="/download">
+<button type="button">Download Report</button>
+</a>
+
+</div>
+
+
+<!-- AI CARD -->
+
+<div style="width:480px; border:1px solid #ccc; padding:20px; border-radius:10px; background:white; box-shadow:0px 0px 8px #ccc;">
+
+<h3>AI Expert System</h3>
+
+<p><b>Technique:</b> Rule-Based Expert System</p>
+
+<h4>Knowledge Base</h4>
+
+<ul>
+<li>IF Temperature > 85 AND Vibration = High → Bearing Wear</li>
+<li>IF Oil Level = Low → Refill Lubrication</li>
+<li>IF Battery Status = Low → Replace Battery</li>
+<li>IF Vibration = High AND Noise = High → Shaft Misalignment</li>
+<li>IF Temperature > 90 → Critical Overheating</li>
+</ul>
+
+{% if reasoning %}
+
+<h4>Rule Evaluation</h4>
+
+<ul>
+{% for r in reasoning %}
+<li>{{ r }}</li>
+{% endfor %}
+</ul>
+
+{% endif %}
+
+{% if result %}
+
+<h4>AI Inference Result</h4>
+
+<ul>
+{% for item in result %}
+<li>{{ item }}</li>
+{% endfor %}
+</ul>
+
+{% endif %}
+
+{% if states %}
+
+<h4>State Space Search</h4>
+
+<div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px;">
+
+{% for s in states %}
+
+<div style="
+padding:8px 12px;
+border-radius:6px;
+font-weight:bold;
+color:white;
+
+{% if 'Normal' in s %}
+background:green;
+
+{% elif 'Low' in s or 'Temperature > 85' in s %}
+background:orange;
+
+{% elif 'Critical' in s %}
+background:red;
+
+{% else %}
+background:green;
+
+{% endif %}
+">
+{{ s }}
+</div>
+
+{% if not loop.last %}
+<div style="font-size:20px;">→</div>
+{% endif %}
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+
+<br><br>
+
+<div style="text-align:center;">
+<a href="/dashboard">
+<button style="padding:8px 16px;">⬅ Back to Dashboard</button>
+</a>
+</div>
+
+</body>
+</html>
