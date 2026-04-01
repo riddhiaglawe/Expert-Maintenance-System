@@ -256,23 +256,23 @@ This helps in documentation and maintenance tracking.
 ---
 
 # 📂 Project Structure  
-Expert-Maintenance-System/
-│
-├── app.py
-├── requirements.txt
-├── database.db
-│
-├── templates/
-│ ├── login.html
-│ ├── dashboard.html
-│ ├── index.html
-│ ├── simulate.html
-│
-├── static/
-│ └── style.css
-│
-├── README.md
-└── .gitignore
+-Expert-Maintenance-System/
+-│
+-├── app.py
+-├── requirements.txt
+-├── database.db
+-│
+-├── templates/
+-│ ├── login.html
+-│ ├── dashboard.html
+-│ ├── index.html
+-│ ├── simulate.html
+-│
+-├── static/
+-│ └── style.css
+-│
+-├── README.md
+-└── .gitignore
 
 ---
 
