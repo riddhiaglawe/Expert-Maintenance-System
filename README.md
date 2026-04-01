@@ -58,16 +58,16 @@ The system analyzes motor conditions using **rule-based inference**, detects fau
 
 # 🚀 Features  
 
-- Motor Condition Analysis (Temperature, Vibration, Oil, Battery, Noise)  
-- Rule-Based Expert System (IF–THEN inference)  
-- AI Rule Evaluation Display (Explainable AI)  
-- State-Space Search Visualization  
-- Intelligent Maintenance Suggestions  
-- Motor Health Status Indicators (Green / Yellow / Red)  
-- Sensor Data Simulation  
-- Maintenance Report Generation (PDF)  
-- Maintenance Logs Storage (Database)  
-- Web-Based Interactive Dashboard  
+-🔍 Motor Condition Analysis (Temperature, Vibration, Oil, Battery, Noise)
+-🧠 Rule-Based Expert System (IF–THEN inference)
+-📊 AI Rule Evaluation Display (Explainable AI)
+-🔄 State-Space Search Visualization
+-🎯 Intelligent Maintenance Suggestions
+-🟢🟡🔴 Motor Health Status Indicators
+-🧪 Sensor Data Simulation
+-📄 Maintenance Report Generation (PDF)
+-🗂 Maintenance Logs Storage (Database)
+-🌐 Web-Based Interactive Dashboard
 
 ---
 
