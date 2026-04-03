@@ -1,5 +1,9 @@
-# 🌐 Live Demo  
+## 🌐 Live Demo  
 https://expert-maintenance-system.onrender.com  
+
+## 📱 Scan to Open Project  
+
+![Project QR](./project-qr.png)
 
 ---
 
