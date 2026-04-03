@@ -3,7 +3,9 @@ https://expert-maintenance-system.onrender.com
 
 ## 📱 Scan to Open Project  
 
-![Project QR](./Project-QR.png)
+<p align="center">
+  <img src="Project-QR.png" width="120"/>
+</p>
 
 ---
 
