@@ -4,7 +4,9 @@ https://expert-maintenance-system.onrender.com
 ## 📱 Scan to Open Project  
 
 ![Project QR](./Project-QR.png)
-
+<p align="center">
+  <img src="project-qr.png" width="200"/>
+</p>
 ---
 
 # ⚙️ AI-Based Expert Maintenance System  
